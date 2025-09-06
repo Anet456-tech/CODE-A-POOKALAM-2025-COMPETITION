@@ -1,4 +1,4 @@
-# 🌸 Code-a-Pookalam 2025 🌸
+<img width="800" height="800" alt="pookkalam" src="https://github.com/user-attachments/assets/297d4c9e-515a-494a-8a50-97dd62616333" /># 🌸 Code-a-Pookalam 2025 🌸
 ### *Create beautiful digital art through code this Onam season!*
 
 ---
@@ -67,51 +67,41 @@ Share your forked repository link with the organizers by **September 6, 2025**!
 **Once you fork this repository, replace this entire README.md with the following format:**
 
 ```markdown
-# 🌸 [Your Name]'s Pookalam 2025 🌸
+# 🌸 Anet's Pookalam 2025 🌸
 
 ## 👨‍💻 About Me
-- **Name:** [Your Full Name]
-- **Institution/Company:** [Your School/College/Company]
-- **GitHub:** [@your-username](https://github.com/your-username)
-- **Programming Language Used:** [Language]
+- **Name:** Anet Byju
+- **Institution/Company:** School of Engineering ,CUSAT
+- **GitHub:** @Anet456-tech(https://github.com/Anet456-tech)
+- **Programming Language Used:** Java Script
 
 ## 🎨 My Pookalam
 
 ### Description
-[Write a brief description of your Pookalam design, inspiration, or the approach you took]
+I believe that My Pookalam design is a simple but beautiful one  which I created with the help of AI.This Onam is more special for me as I was able to design a pookkalam of my own and this design draws inspiration from the Pookkalam we made at home.for me it was a new piece of info that we could create pookkalam digitally...
 
 ### Preview
-![My Pookalam](output/pookalam-preview.png)
-*Add more images if you have multiple views or animations*
+!My Pookalam!
+[Uploading pookkalam.png…]
+
 
 ### Features
-- [Feature 1 - e.g., "Colorful geometric patterns"]
-- [Feature 2 - e.g., "Interactive elements"]
+- Colourful
+- Prominent triangular patterns
 
 ## 🚀 How to Run
 
-### Prerequisites
-[List any requirements, libraries, or software needed]
-```bash
-# Example for Python
-pip install matplotlib turtle numpy
-```
-
 ### Running the Code
 ```bash
-# Add your specific run commands here
-python pookalam.py
-# or
-open index.html
-# or your specific instructions
+ start pookkalam.html
 ```
 
 ## 📁 File Structure
 ```
 Code-a-Pookalam-2025/
 ├── README.md (this file)
-├── pookalam.py (or your main file)
-└── requirements.txt (if applicable)
+├── pookalam.html (or your main file)
+
 ```
 
 ## 🎊 Happy Onam! 🎊
