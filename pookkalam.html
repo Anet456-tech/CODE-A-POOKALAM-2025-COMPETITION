@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Onam Pookkalam </title>
+  <style>
+    
+    body {
+      margin: 0;
+      background: radial-gradient(circle, #eac387); 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    h1 {
+      color: #4A148C;
+      margin: 24px 0 16px 0;
+      text-align: center;
+    }
+
+    
+  </style>
+</head>
+<body style="margin:0;">
+  <h1>Pookkalam</h1>
+  
+    <canvas id="pookkalam" width="800" height="800"></canvas>
+
+
+  <script>
+    const canvas = document.getElementById('pookkalam');
+    const ctx = canvas.getContext('2d');
+    const R = 260; 
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+
+    const colors = {
+      red: "red",
+      yellow: "#FBC02D",
+      orange: "#F57C00",
+      green: "#2E7D32",
+      purple: "#8E24AB",
+      white: "#F5F5F5",
+      pink: "#EC407A"
+    };
+
+    function drawCircle(radius, color) {
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
+      ctx.fillStyle = color;
+      ctx.fill();
+    }
+
+    
+    function drawPetalRing(innerR, outerR, count, color) {
+      const step = 360 / count;
+      for (let i = 0; i < count; i++) {
+        const angle = i * step;
+        drawPetal(angle, innerR, outerR, color);
+      }
+    }
+
+    function drawPetal(angle, innerR, outerR, color) {
+      const rad = angle * Math.PI / 180;
+      const x1 = centerX + innerR * Math.cos(rad);
+      const y1 = centerY + innerR * Math.sin(rad);
+      const x2 = centerX + outerR * Math.cos(rad + 8 * Math.PI / 180);
+      const y2 = centerY + outerR * Math.sin(rad + 8 * Math.PI / 180);
+      const x3 = centerX + outerR * Math.cos(rad - 8 * Math.PI / 180);
+      const y3 = centerY + outerR * Math.sin(rad - 8 * Math.PI / 180);
+
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x2, y2);
+      ctx.lineTo(x3, y3);
+      ctx.closePath();
+      ctx.fillStyle = color;
+      ctx.fill();
+    }
+
+    /** Full pookkalam */
+    function drawPookkalam() {
+      // Base white circle
+      drawCircle(R, colors.green);
+
+      // Outer border rings
+      drawCircle(0.9* R, colors.orange);
+      drawCircle(0.85* R, colors.yellow);
+
+      // Outer petal ring
+      drawPetalRing(0.72 * R, 0.95 * R, 36, colors.red);
+
+      // Middle ring with petals
+      drawCircle(0.65 * R, colors.purple);
+      drawPetalRing(0.48 * R, 0.65 * R, 24, colors.yellow);
+
+      // Decorative alternating ring
+      for (let i = 0; i < 36; i++) {
+        const col = i % 2 === 0 ? colors.green : colors.orange;
+        drawPetal(i * 12, 0.28* R, 0.48 * R, col);
+      }
+
+      // Inner circle flower
+      drawCircle(0.3 * R, colors.white);
+      drawPetalRing(0.05 * R, 0.3* R, 16, colors.pink);
+
+      // Center dot
+      drawCircle(0.04* R, colors.red);
+    }
+    
+
+    let rotation = 0; // rotation angle in degrees
+
+function drawRotatingPookkalam() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height); // clear canvas
+
+  ctx.save();
+  ctx.translate(centerX, centerY); // move origin to center
+  ctx.rotate(rotation * Math.PI / 180); // rotate canvas
+  ctx.translate(-centerX, -centerY); // move origin back
+
+  drawPookkalam(); // draw the full Pookkalam
+  ctx.restore();
+
+  rotation += 0.2; // increase rotation (speed)
+  requestAnimationFrame(drawRotatingPookkalam);
+}
+
+
+    drawPookkalam();
+    drawRotatingPookkalam();
+
+  </script>
+</body>
+</html>
+
+
+    
+
+    
